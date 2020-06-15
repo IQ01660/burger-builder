@@ -1,6 +1,6 @@
 //standard imports
 import React, { Component } from 'react';
-import Aux from './hoc/Aux';
+
 //importing components and container
 import Layout from './components/Layout/Layout';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';

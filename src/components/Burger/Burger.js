@@ -18,7 +18,7 @@ const burger = (props) => {
     // building a list of BurgerIngredient's
     let transformedIngredients = Object.keys(props.ingredients)
         .map((igKey) => { 
-            return [... new Array(props.ingredients[igKey])]
+            return [...(new Array(props.ingredients[igKey]))]
                 .map((_, id) => (
                         <BurgerIngredient type={igKey} key={igKey + id} />
                 ));
