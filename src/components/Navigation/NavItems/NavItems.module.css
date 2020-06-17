@@ -1,0 +1,26 @@
+.NavItems {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    height: 100%;
+    list-style: a;
+}
+
+.Vertical{
+    margin-top: 20px;
+    flex-flow: column;
+    background-color: rgb(250, 191, 95);
+}
+
+.Vertical li {
+    height: auto;
+    width: 100%;
+}
+
+.Vertical a {
+    height: auto;
+    width: 100%;
+}

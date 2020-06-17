@@ -1,8 +1,9 @@
 //standard imports
-import React from 'react';
+import React, {Component} from 'react';
 
 //components
 import Toolbar from './../Navigation/Toolbar/Toolbar';
+import SideDrawer from './../Navigation/SideDrawer/SideDrawer';
 
 //css module imports
 import classes from './Layout.module.css';
@@ -16,11 +17,34 @@ import Aux from './../../hoc/Aux';
  * and goes into the App container in [App.js]
  * @param {*} props 's children are put into <main> tag
  */
-const layout = (props) => (
-	<Aux>
-		<Toolbar />
-		<main className={classes.Content}>{props.children}</main>
-	</Aux>
-);
+class Layout extends Component {
+    state = {
+        showSideDrawer: false,
+    };
 
-export default layout;
+    closeSideDrawer() {
+        
+        this.setState({
+            showSideDrawer: false,
+        });
+    }
+
+    openSideDrawer() {
+        this.setState({
+            showSideDrawer: true,
+        });
+    }
+
+    render() {
+        return (
+            <Aux>
+                <Toolbar barsClicked={() => this.openSideDrawer()}/>
+                <SideDrawer show={this.state.showSideDrawer} close={() => this.closeSideDrawer()}/>
+                <main className={classes.Content}>{this.props.children}</main>
+            </Aux>
+        );
+    }
+}
+
+
+export default Layout; 
